@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            /* 가로로 나란히 배치(inline 속성은 가로 세로 크기 안 먹힘) */
+            /* 나란히 배치하면서 가로 세로 크기도 바꿔주고 싶다면 'inline-block' 속성 사용!!!*/
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <span>더미객체</span>
+    <div id="box">대상객체</div>
+    <span>더미객체</span>
+</body>
+</html>
