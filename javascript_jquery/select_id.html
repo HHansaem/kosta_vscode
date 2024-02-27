@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // getElementById와 querySelector는 첫번째 요소 하나만 가져온다.
+            let header = document.getElementById("header");
+            // let header = document.querySelector("#header");
+            header.style.color = "orange";
+            header.style.background = 'red';
+            header.innerHTML = 'From Javascript';
+
+            //querySelectorAll는 해당하는 모든 요소를 배열로 가져온다. (반복문으로 하나씩 적용시켜줘야 함)
+            let header1 = document.querySelectorAll("h1");
+            for(h of header1){
+                h.style.color = 'blue';
+                h.style.background = 'skyblue';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 id="header">Header</h2>
+    <h2 id="header">Header</h2>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+</body>
+</html>

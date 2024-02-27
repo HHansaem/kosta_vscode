@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var clock = document.getElementById("clock");
+
+            //setInterval() : 특정 코드나 함수를 일정한 시간 간격으로 반복 실행
+            //1초마다 현재 시각 가져와서 업데이트
+            setInterval(function() {
+                var now = new Date();  //현재 날짜, 시각 얻어옴
+                clock.innerHTML = now.toString();
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>
