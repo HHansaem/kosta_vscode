@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let user = {
+            name:'hong',
+            age:30
+        }
+
+        // let per = {...user};  //user에 있는 모든 속성과 값을 복사
+        let per = {...user, addr:'seoul'};  //새로운 key속성을 써주면 해당 속성과 값 추가
+        console.log(per);
+        
+        let per2 = {...user, name:'park'};  //원래 있던 key속성을 써주면 해당 속성에 대한 값 변경
+        console.log(per2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
