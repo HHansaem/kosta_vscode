@@ -11,6 +11,25 @@
         }
 
         hello();  //함수호출
+
+        function sum(x, y) {
+            return x+y;
+        }
+
+        var res = sum(10,20);
+        console.log(res);
+        
+        var res1 = hello();  //이렇게 쓰지않기
+        console.log(res1);  //undefined
+
+        var f = sum;  //함수명을 변수에 저장 가능
+        console.log(f(100,200));
+
+        //익명함수 : 함수를 정의해서 변수에 담아 사용 (함수명이 없음. func는 변수명)
+        var func = function(n) {
+            return n+10;
+        }
+        console.log(func(10));
     </script>
 </head>
 <body>
