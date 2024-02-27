@@ -41,14 +41,23 @@
         ]
         window.onload = function() {
             var container = document.getElementById("container");
-            
+            var elemStr = "<div class = 'row'>"
+            accs.forEach((item, index) => 
+                elemStr += `<div class="cloumn">${index}</div>
+                            <div class="cloumn">${item.id}</div>
+                            <div class="cloumn">${item.name}</div>
+                            <div class="cloumn">${item.balance}</div>
+                            <div class="cloumn">${item.type}</div>
+                            <div class="cloumn">${item.grade}</div>`)
+                elemStr += "</div>"
+                container.innerHTML += elemStr;
         }
     </script>
 </head>
 <body>
     <form action="">
         <div class="header"><h3>전체 계좌 조회</h3></div>
-        <div class="container">
+        <div class="container" id="container">
             <div class="row">
                 <div class="title cloumn">순서</div>
                 <div class="title cloumn">계좌번호</div>
@@ -56,14 +65,6 @@
                 <div class="title cloumn">입금액</div>
                 <div class="title cloumn">종류</div>
                 <div class="title cloumn">등급</div>
-            </div>
-            <div class="row">
-                <div class="cloumn">1</div>
-                <div class="cloumn">1001</div>
-                <div class="cloumn">홍길동</div>
-                <div class="cloumn">100000</div>
-                <div class="cloumn">특수</div>
-                <div class="cloumn">VIP</div>
             </div>
         </div>
     </form>
