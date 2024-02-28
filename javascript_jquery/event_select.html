@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            let button = document.querySelector("#button");
+            button.onclick = function() {
+                //select의 option들을 fliter를 통해 option.selected이 ture인 것들만 배열 형식으로 가져온다. 
+                //그 결과를 map을 통해 가공해서 value형식의 배열로 저장되게 된다.
+                let selectedValues = Array.from(select.options)
+                    .filter(option => option.selected)
+                    .map(option => option.value); 
+                console.log(selectedValues);
+            }
+        }
+    </script>
+</head>
+<body>
+    <select name="" id="select" multiple>
+        <option value="blues">Blues</option>
+        <option value="rock">Rock</option>
+        <option value="classic">Classic</option>
+    </select>
+    <button id="button">선택</button>
+</body>
+</html>
