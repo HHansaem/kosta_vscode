@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonClick() {
+            alert('click');
+        }
+
+        window.onload = function() {
+            let btn = document.getElementById("button");
+            btn.onclick = function() {
+                alert('click');
+            }
+            
+            //버튼 눌러도 링크 안 넘어가게
+            let daumBtn = document.getElementById("daum");
+            daumBtn.onclick = function() {
+                return false;
+            }
+
+            //입력 안하면 전송 안 되게
+            let form = document.getElementById("form");
+            let id = document.getElementById("id");
+            form.onsubmit = function() {
+                if(id.value == null || id.value == "") {
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="alert('click')">버튼1</button>
+    <button onclick="buttonClick()">버튼2</button>
+    <button id="button">버튼3</button><br>
+    <a href="http://daum.net" id="daum">버튼</a>
+    <form action="http://naver.com" id="form">
+        <input type="text" id="id">
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>
