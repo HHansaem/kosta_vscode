@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let numreg = /^[0-9]+$/;  //숫자만 체크하는 정규식
+        let comareg = /\B(?=(\d{3})+(?!\d))/g;  //3자리당 콤마 추가 정규식
+        let hanglereg = /^[가-힣]+$/;  //완성형 한글만 체크하는 정규식
+        let charreg = /^[가-힣a-zA-Z\s]+$/;  //완성형 한글과 영문, 띄어쓰기를 체크하는 정규식
+        let charexreg =/^[가-힣a-zA-Z\s-#,]+$/;  //완성형 한글과 영문, 띄어쓰기를, 일부 특수기호(, - #)를 체크하는 정규식
+
+        window.onload = function() {
+            let txt = document.getElementById("num");
+            txt.onkeydown = function(e) {
+                if(!e.key.match(numreg)) {  //숫자가 아닐 경우 false 리턴
+                    return false;
+                }
+            }
+            
+            txt.onkeyup = function() {
+                let num = this.value.replaceAll(',','');  //모든 콤마 제거 후
+                this.value = num.replace(comareg, ',');  //3자리 당 콤마 적용
+            }
+
+            let hangle = document.getElementById("hangle");
+            hangle.onkeydown = function(e) {
+                if(!e.key.match(hanglereg)) {
+                    return false;
+                }
+            }
+
+            let char = document.getElementById("char");
+            char.onkeydown = function(e) {
+                if(!e.key.match(charreg)) {
+                    return false;
+                }
+            }
+            
+            let charex = document.getElementById("charex");
+            charex.onkeydown = function(e) {
+                if(!e.key.match(charexreg)) {
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="num"><br>
+    <input type="text" name="" id="hangle"><br>
+    <input type="text" name="" id="char"><br>
+    <input type="text" name="" id="charex">
+</body>
+</html>
