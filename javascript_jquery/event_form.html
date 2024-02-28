@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //my1, my2, my3가 모두 같은 결과 (my form)
+            let my1 = document.getElementById("my");
+            let my2 = document.forms.my;  //여기서 my는 id가 아니라 name
+            let my3 = document.forms[0];
+            my2.elements.one.value = "one";  //부모를 통해 자식 접근
+            my3.elements.two.value = "two";
+            my3.elements.check.checked = true;
+
+            //my4, my5, my6가 모두 같은 결과 (your form)
+            let my4 = document.getElementById("your");
+            let my5 = document.forms.your;
+            let my6 = document.forms[1];
+            my5.elements.three.value = "three";  //부모를 통해 자식 접근
+            my6.elements.four.value = "four";
+
+            //'남자'선택하면 age 비활성화, '여자'선택하면 age 활성화
+            let genderList = my3.elements.gender;
+            for(gender of genderList) {  //gender가 여러개니까 반복문
+                gender.onclick = function() {
+                    if(this.checked && this.value == "female") {
+                        my3.elements.age.disabled = false;
+                    } else {
+                        my3.elements.age.disabled = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- form 요소에 접근하려면 name 사용 -->
+    <form action="" name="my" id="my">
+        <input type="text" name="one" id="">
+        <input type="text" name="two" id="">
+        <input type="checkbox" name="check" id="">체크
+        <input type="radio" name="gender" value="male">남
+        <input type="radio" name="gender" value="female">여
+        <select name="age" id="">
+            <option value="20">20대</option>
+            <option value="30">30대</option>
+            <option value="40">40대</option>
+            <option value="50">50대</option>
+        </select>
+    </form>
+
+    <form action="" name="your" id="your">
+        <input type="text" name="three" id="">
+        <input type="text" name="four" id="">
+        
+    </form>
+</body>
+</html>
