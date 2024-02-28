@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () { 
+            //마우스의 위치값 가져오기
+            let txt = document.getElementById("txt");
+            txt.onmousemove = function(e) {
+                this.value = e.clientX + ":" + e.clientY;  //this는 txt를 의미
+            }
+
+            //더블클릭 했을 때
+            let dbspan = document.getElementById("dbspan");
+            dbspan.ondblclick = function() {
+                alert("dbclick");
+            }
+            //더블클릭했을 때 드래그로 선택되는 거 막기
+            dbspan.onmousedown = function() {
+                return false;
+            }
+         }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt" value="Mouse over me"><br>
+    <span id="dbspan">이곳을 더블클릭하세요</span>
+    <!-- 복사 못하게 (ctrl+c 하면 alert) -->
+    <div oncopy="alert('복사할 수 없습니다.'); return false">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis doloremque dignissimos, labore ut consequuntur exercitationem repudiandae rem suscipit placeat minima fugiat sequi ea nisi impedit delectus mollitia illum porro at.
+    </div>
+</body>
+</html>
