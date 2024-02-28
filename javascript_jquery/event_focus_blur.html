@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 타당성 체크 */
+        .invalid {
+            border-color: red;
+        }
+        #error {
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // let email = document.getElementById("email");
+            //id명은 위처럼 쓰지 않고 바로 사용 가능 (javascript 버전에 따라)
+
+            email.onblur = function() {  //해당 input칸 밖을 선택했을 때(포커스가 없을 때)
+                if(!this.value.includes('@')) {  //@가 있는지 여부에 따라
+                    this.classList.add("invalid");  //class 속성 추가해주기
+                    error.innerHTML = "올바른 이메일 주소를 입력하세요.";  //id명 바로 사용 가능
+                }
+            }
+            email.onfocus = function() {  //해당 input칸을 선택했을 때(포커스가 있을 때)
+                this.classList.remove("invalid");
+                error.innerHTML = '';
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    이메일<input type="email" name="" id="email">
+    <div id="error"></div>
+</body>
+</html>
