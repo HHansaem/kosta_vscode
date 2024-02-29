@@ -81,26 +81,34 @@
 
     let form = document.forms.calculator;
 
+    form.elements.money.onchange = calculate;
+    form.elements.interest.onchange = calculate;
+    form.elements.months.onchange = calculate;
+    
     // your code
     // initial: 계산 전의 잔고(예치금액)
     // interest: 이자율. 0.05는 연 5%의 이자율을 의미합니다.
     // years: 예금 유치 기간으로, 연 단위
     // height: result / 예치금액 * 100px
 
-    let initial = form.elements.money.value;
-    let interest = form.elements.interest.value;
-    let years = form.elements.months.value;
-    console.log(initial);
-    console.log(interest);
-    console.log(years);
-    
-    let result = Math.round(initial * (1 + interest * years));
-    console.log(result);
-
-    let height = document.getElementById("height-after");
+    function calculate() {
+      let initial = +form.elements.money.value;  //앞에 '+'쓰거나 Number로 감싸주면 숫자로 변환 
+      let interest = +form.elements.interest.value / 100;
+      let years = +form.elements.months.value / 12;
+      
+      let result = Math.round(initial * (1 + interest * years));
+  
+      let height = (result / initial) * 100 + "px";
+  
+      let money_before = document.querySelector("#money-before");
+      let money_after = document.querySelector("#money-after");
+      let height_after = document.querySelector("#height-after");
+      money_before.innerHTML = initial;
+      money_after.innerHTML = result;
+      height_after.style.height = height;
+    }
 
   </script>
-
 
 </body>
 </html>
