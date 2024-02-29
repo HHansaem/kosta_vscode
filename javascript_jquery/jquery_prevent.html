@@ -16,6 +16,13 @@
 
             //age가 0보다 작으면 못 넘어가게 막기
             $('#form').submit(function(e){
+                let name = $("input[name='name']").val();
+                if(name.replace(/[가-힣]/g, '').length != 0) {
+                    //한글을 제거했는데 길이가 0이 아니면 (한글 아닌 글자가 들어가있다는 것)
+                    alert("한글만 입력하세요");
+                    e.preventDefault();
+                }
+                
                 let age = +$("input[name='age']").val();  //특정 속성의 값 가져와서 숫자로 바꾸기
                 if(age < 0) {
                     alert("나이를 다시 입력하세요");
