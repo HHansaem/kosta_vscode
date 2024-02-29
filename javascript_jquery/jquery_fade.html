@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                //fadeToggle: fade로 사라졌다 나타났다 하는 거(slow는 천천히, fast는 빠르게)
+                //사라졌을 때는 자리 차지 X (아래 요소들이 사라진 부분으로 올라옴)
+                $(".page").fadeToggle('slow');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <h1>fade test</h1>
+</body>
+</html>
