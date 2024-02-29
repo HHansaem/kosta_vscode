@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        //** javascript 사용
+        // window.onload = function(){
+        //     let h1s = document.querySelectorAll("h1");
+        //     for(h1 of h1s){
+        //         h1.style.color = "red";
+        //         h1.style.background = "black";
+        //     }
+        // } 
+
+        //** jquery 사용 (위 코드랑 같은 의미)
+        // $(document).ready(function(){
+        //     $("h1").css('color', 'red');
+        //     $("h1").css('background', 'black');
+        // })
+        
+        // 위 코드 축약 버전
+        let i = 0;
+        $(function(){
+            //css: 선택한 요소의 스타일 속성을 가져오거나 설정
+            $("h1").css('color', 'red');
+            $("h1").css('background', 'black');
+            let imgs = ["cat1.jpg", "cat2.jpg"];
+            $("#next").click(function(){
+                //attr: 선택한 요소의 속성을 가져오거나 설정
+                $("img").attr("src",imgs[i++%2]); 
+            })
+
+            console.log($("img").attr("width"));
+        })
+
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <img src="" alt="" width="150px" height="110px">
+    <button id="next">클릭</button>
+</body>
+</html>
