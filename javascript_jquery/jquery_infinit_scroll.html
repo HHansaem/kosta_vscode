@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //body에 20개의 데이터 만드는 함수
+            var appendData = function() {
+                for(var i=0; i<20; i++) {
+                    $('<h1>Shopping data</h1>').appendTo('body');
+                }
+            }
+
+            appendData();
+
+            //무한 스크롤(계속 데이터 생김)
+            $(window).scroll(function() {
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+
+                if(scrollHeight == documentHeight) {
+                    appendData();
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
