@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //링크로 못 넘어가게 막기
+            $('a').click(function(e){
+                console.log("click");
+                // return false;
+                e.preventDefault();  //원래 click이 가지고 있는 기능을 제거
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="http://naver.com">네이버</a>
+</body>
+</html>
