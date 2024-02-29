@@ -13,10 +13,25 @@
                 // return false;
                 e.preventDefault();  //원래 click이 가지고 있는 기능을 제거
             })
+
+            //age가 0보다 작으면 못 넘어가게 막기
+            $('#form').submit(function(e){
+                let age = +$("input[name='age']").val();  //특정 속성의 값 가져와서 숫자로 바꾸기
+                if(age < 0) {
+                    alert("나이를 다시 입력하세요");
+                    e.preventDefault();
+                }
+            })
         })
     </script>
 </head>
 <body>
-    <a href="http://naver.com">네이버</a>
+    <a href="index2.html">네이버</a>
+    <form action="index2.html" id="form">
+        <input type="text" name="name" required>  <!-- required: 반드시 입력 -->
+        <input type="text" name="address" required>
+        <input type="text" name="age" required>
+        <input type="submit" value="전송">
+    </form>
 </body>
 </html>
