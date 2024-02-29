@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("img").attr({
+                alt:'jQuery 라이브러리 사용한 속성 지정',
+                src: function(index){  //서로 다른 속성을 주려면 function을 사용해 패턴을 적어준다.
+                    var size = (index + 1) * 100;
+                    return 'http://placehold.it/' + size + 'x100';
+                }
+            })
+            $("img").css("margin", 10);
+            
+            // javascript 사용
+            // let div1 = document.getElementById("div1");
+            // div1.innerHTML = '<h1>HTML</h1>';  //innerHTML: html태그로 인식
+            // let div2 = document.getElementById("div2");
+            // div2.innerText = '<h1>HTML</h1>';  //innerText: text로 인식
+            
+            // jQuery 사용 (위 코드와 같은 의미)
+            $("#div1").html('<h1>HTML</h1>');  //html태그로 인식
+            $("#div2").text('<h1>HTML</h1>');  //text로 인식
+        })
+    </script>
+</head>
+<body>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
