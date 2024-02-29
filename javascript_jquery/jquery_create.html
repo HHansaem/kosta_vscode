@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('<h1>Create document object</h1>').css({
+                backgroundColor:'black',
+                color:'red'
+            }).appendTo('body');
+
+            //위 코드와 동일 (사용법만 다름 append, appendTo)
+            let p = $('<p>Create document object</p>').css({
+                backgroundColor:'black',
+                color:'red'
+            });
+            $('body').append(p);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
